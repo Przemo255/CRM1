@@ -1,0 +1,71 @@
+<!-- Error show -->
+<%= form_for(@deal) do |f| %>
+  <% if @deal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+      <ul>
+      <% @deal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<!-- panel preview -->
+        <div class="col-sm-5">
+            <h4>Dodaj interes:</h4>
+            <div class="panel panel-default">
+                <div class="panel-body form-horizontal payment-form">
+                    <div class="form-group">
+                            <%= f.label "nazwa" ,class: "col-sm-3 control-label"%>
+                        <div class="col-sm-9">
+                            <%= f.text_field :name, class:"form-control" %>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <%= f.label "opis" ,class: "col-sm-3 control-label"%>
+                        <div class="col-sm-9">
+                        <%= f.text_field :description, class:"form-control" %>
+                        </div>
+                        <div class="col-sm-9">
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                    <%= f.label "wartość" ,class: "col-sm-3 control-label"%>
+                        <div class="col-sm-9">
+                            <%= f.text_field :value, class:"form-control" %>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <%= f.label "typ" ,class: "col-sm-3 control-label"%>
+                        <div class="col-sm-9">
+                        <%= f.text_field :manner, class:"form-control"%>
+                        </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="date" class="col-sm-3 control-label">Date</label>
+                        <div class="col-sm-9">
+                        <script>
+                            $(function() {
+                                $( "#datepicker" ).datepicker();
+                            });
+                        </script>
+                        <%= f.text_field :date, class:"form-control",id:"datepicker" %>
+                        </div>
+                    </div>   
+                    <div class="form-group">
+                        <div class="col-sm-12 text-right">
+                              <div class="actions">
+                                  <%= f.submit 'Dodaj interes' , class: 'btn btn-default preview-add-button'  %>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div> <!-- / panel preview -->
+        </div>
+        <!-- end js -->
+        <div class="col-sm-7">
+        <% end %>
+         <%= render partial: 'last_ten_transaction' %> 
+  </div>
+ </div>
+</div>

@@ -1,0 +1,12 @@
+
+<center>
+<h1>Twitter</h1>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+<%= form_tag(social_media_new_path, :method => "get") do %>
+   <%= text_field_tag :message %>
+   <%= submit_tag "send", class: "btn_search"%>
+<% end %>
+</center>

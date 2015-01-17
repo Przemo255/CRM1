@@ -1,0 +1,91 @@
+<%= form_for @person, :html => { :class => "form-horizontal person" } do |f| %>
+
+    <% if @person.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @person.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+<div class="col-sm-5">
+  <h4>Dodaj osobę</h4>
+   <div class="panel panel-default">
+    <div class="panel-body form-horizontal payment-form">
+     <div class="form-group">
+      <%= f.label "nazwa" ,class: "col-sm-3 control-label"%>
+      <%= error_span(@person[:name]) %>
+        <div class="col-sm-9">
+        <%= f.text_field :name, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Nazwisko" ,class: "col-sm-3 control-label"%>
+        <%= error_span(@person[:surname]) %>
+        <div class="col-sm-9">
+        <%= f.text_field :surname, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Opis" ,class: "col-sm-3 control-label"%>
+        <%= error_span(@person[:description]) %>
+        <div class="col-sm-9">
+        <%= f.text_field :description, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Email" ,class: "col-sm-3 control-label"%>
+        <%= error_span(@person[:email]) %>
+        <div class="col-sm-9">
+        <%= f.text_field :email, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Strona WWW" ,class: "col-sm-3 control-label"%>
+        <%= error_span(@person[:www]) %>
+        <div class="col-sm-9">
+        <%= f.text_field :www, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Telefon" ,class: "col-sm-3 control-label"%>
+        <%= error_span(@person[:phone]) %>
+        <div class="col-sm-9">
+        <%= f.text_field :phone, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Adress" ,class: "col-sm-3 control-label"%>
+        <%= error_span(@person[:adress]) %>
+        <div class="col-sm-9">
+        <%= f.text_field :adress, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Miasto" ,class: "col-sm-3 control-label"%>
+        <%= error_span(@person[:city]) %>
+        <div class="col-sm-9">
+        <%= f.text_field :city, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Kraj" ,class: "col-sm-3 control-label"%>
+        <%= error_span(@person[:country]) %>
+        <div class="col-sm-9">
+        <%= f.text_field :country, class:"form-control" %>
+</div>
+</div>
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    people_path, :class => 'btn btn-default' %>
+    <% end %>
+  </div>
+ </div>
+</div>

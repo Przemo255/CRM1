@@ -1,0 +1,31 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Data początku kampani</th>
+      <th>Data końca kampani</th>
+      <th>Status</th>
+      <th>Rodzaj kampani</th>
+      <th>Opis kampani</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @campains.each do |campain| %>
+      <tr>
+        <td><%= campain.name %></td>
+        <td><%= campain.start_data %></td>
+        <td><%= campain.end_data %></td>
+        <td><%= campain.status %></td>
+        <td><%= campain.campain_type %></td>
+        <td><%= campain.campain_description %></td>
+        <td><%= link_to 'Show', campain %></td>
+        <td><%= link_to 'Edit', edit_campain_path(campain) %></td>
+        <td><%= link_to 'Destroy', campain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

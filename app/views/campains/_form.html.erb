@@ -1,0 +1,99 @@
+<%= form_for(@campain) do |f| %>
+  <% if @campain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campain.errors.count, "error") %> prohibited this campain from being saved:</h2>
+      <ul>
+      <% @campain.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="col-sm-5">
+  <h4>Dodaj Kampanię</h4>
+   <div class="panel panel-default">
+    <div class="panel-body form-horizontal payment-form">
+     <div class="form-group">
+      <%= f.label "nazwa" ,class: "col-sm-3 control-label"%>
+        <div class="col-sm-9">
+        <%= f.text_field :name, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Data startu Kampani" ,class: "col-sm-3 control-label"%>
+        <div class="col-sm-9">
+        <script>
+        $(function() {
+            $( "#datepicker" ).datepicker();
+        });
+        </script>
+         <%= f.text_field :start_data ,class: "form-control",id:"datepicker" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Data końca Kampani" ,class: "col-sm-3 control-label"%>
+        <div class="col-sm-9">
+      <script>
+        $(function() {
+            $( "#datepicker1" ).datepicker();
+        });
+        </script>
+        <%= f.text_field :end_data ,class: "form-control",id:"datepicker1" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Spodziewany Przychód" ,class: "col-sm-3 control-label"%>
+        <div class="col-sm-9">
+        <%= f.text_field :expected_income, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Końcowy Przychód" ,class: "col-sm-3 control-label"%>
+        <div class="col-sm-9">
+        <%= f.text_field :end_income, class:"form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Koszt Kampani" ,class: "col-sm-3 control-label"%>
+        <div class="col-sm-9">
+        <%= f.text_field :cost, class: "form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Status" ,class: "col-sm-3 control-label"%>
+        <div class="col-sm-9">
+        <%= f.select :status, options_for_select(["Wybierz", "Aktywna", "Nieaktywna", "Zakończony"], disabled:["Wybierz"]), class: "form-control" %>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Rodzaj Kampani" ,class: "col-sm-3 control-label"%>
+        <div class="col-sm-9">
+         <%= f.collection_select :campain_type, CampainType.order(:name),:id,:name, include_blank: true, class:"form-control"%>
+        </div>
+        </div>
+        <div class="form-group">
+        <%= f.label "Opis" ,class: "col-sm-3 control-label"%>
+        <div class="col-sm-9">
+        <%= f.text_field :campain_description , class:"form-control" %>
+</div>
+</div>
+
+<%= f.submit nil, :class => 'btn btn-primary' %>
+<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+people_path, :class => 'btn btn-default' %>
+<% end %>
+   </div>
+  </div>
+</div>
+<div class="col-sm-7">
+<h4>Lista kampani </h4>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="table-responsive">
+            <table class="table preview-table">
+            <%= render partial: 'index' %>
+            </table>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @campain_type.name %>
+</p>
+
+<p>
+  <strong>Campain:</strong>
+  <%= @campain_type.campain_id %>
+</p>
+
+<%= link_to 'Edit', edit_campain_type_path(@campain_type) %> |
+<%= link_to 'Back', campain_types_path %>

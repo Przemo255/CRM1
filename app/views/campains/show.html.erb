@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @campain.name %>
+</p>
+
+<p>
+  <strong>Start data:</strong>
+  <%= @campain.start_data %>
+</p>
+
+<p>
+  <strong>End data:</strong>
+  <%= @campain.end_data %>
+</p>
+
+<p>
+  <strong>Expected income:</strong>
+  <%= @campain.expected_income %>
+</p>
+
+<p>
+  <strong>End income:</strong>
+  <%= @campain.end_income %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @campain.cost %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @campain.status %>
+</p>
+
+<p>
+  <strong>Campain type:</strong>
+  <%= @campain.campain_type %>
+</p>
+
+<p>
+  <strong>Campain description:</strong>
+  <%= @campain.campain_description %>
+</p>
+
+<%= link_to 'Edit', edit_campain_path(@campain) %> |
+<%= link_to 'Back', campains_path %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_data: MyString
+  end_data: MyString
+  expected_income: 
+  end_income: 
+  cost: 
+  status: MyString
+  campain_type: MyString
+  campain_description: MyText
+
+two:
+  name: MyString
+  start_data: MyString
+  end_data: MyString
+  expected_income: 
+  end_income: 
+  cost: 
+  status: MyString
+  campain_type: MyString
+  campain_description: MyText

@@ -1,0 +1,40 @@
+<div class="col-sm-7">
+            <h4>Ostatnie dziesięć transakcji </h4>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table preview-table">
+                            <thead>
+                                <tr>
+                                    <th>Nazwa</th>
+                                    <th>Opis</th>
+                                    <th>Wartość</th>
+                                    <th>Typ</th>
+                                    <th>Data</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <% @deals.each do |deal| %>
+                                <tr>
+                                   <td><%= deal.name %></td>
+                                   <td><%= deal.description %></td>
+                                   <td><%= deal.value %></td>
+                                   <td><%= deal.manner %></td>
+                                   <td><%= deal.date %></td>
+                                </tr>
+                                <% end %>
+                            </tbody> <!-- preview content goes here-->
+                        </table>
+                    </div>                            
+                </div>
+            </div>
+            <div class="row text-right">
+                <div class="col-xs-12">
+                </div>
+            </div>
+                    <hr style="border:1px dashed #dddddd;">
+                </div>                
+            </div>
+        </div>
+  </div>
+</div>

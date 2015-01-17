@@ -1,0 +1,2 @@
+module MasmailingHelper
+end
